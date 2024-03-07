@@ -1,2 +1,7 @@
 .venv
 .idea
+__pycache__/
+client_secrets.json
+/google_disk
+classification/product_cards.db
+product_cards.db
