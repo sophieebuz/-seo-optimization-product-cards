@@ -1,3 +1,23 @@
+## Checkpoint 1
+## Запуск локально:
+  1. `poetry install --no-cache --without additional` установка зависимостей
+  2. `poetry run pre-commit install`
+  3. `poetry run dvc pull` подтянуть данные
+
+Дальнейшие команды можно делать в любом поряке:
+  - `poetry run python .\classification\train.py` запуск для обучения модели
+  - `poetry run python .\classification\inference.py` запуск для инференса
+  - `poetry run uvicorn --port 8898 api.main:app` для запуска сервиса (затем перейти в браузер по следующему url `http://localhost:8898/`)
+
+## Запуск из докер контейнера:
+  1. `poetry install --no-cache --with dev` установка зависимостей
+  2. `poetry run pre-commit install`
+  3. `poetry run dvc pull` подтянуть данные
+  4. `docker build -t seo-optimization .` собрать образ
+  5. `docker run --rm -it --name seo-optimization -p 8898:8000 seo-optimization` запустить docker-image (затем перейти в браузер по следующему url `http://localhost:8898/`)
+
+____
+Общие сведения о проекте
 # SEO-оптимизация карточек товара на маркетплейсах
 
 # Студенты, выполняющие работы:
@@ -63,5 +83,3 @@
 Если UI будет реализован в виде web, то предлагается использование фреймворка Angular, так как есть опыт работы на нем, плюс позволяет создавать гибкие и масштабируемые решения.
 
 <img width="627" alt="image" src="https://github.com/Kulikov17/seo-optimization-product-cards/assets/61663158/6bed9a33-21db-4950-8929-0916d7e52144">
-
-## Запуск:
