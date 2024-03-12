@@ -10,7 +10,7 @@
   - `poetry run uvicorn --port 8898 api.main:app` для запуска сервиса (затем перейти в браузер по следующему url `http://localhost:8898/`)
 
 ## Запуск из докер контейнера:
-  1. `poetry install --no-cache --with dev` установка зависимостей
+  1. `poetry install --no-cache --only dev` установка зависимостей
   2. `poetry run pre-commit install`
   3. `poetry run dvc pull` подтянуть данные
   4. `docker build -t seo-optimization .` собрать образ
