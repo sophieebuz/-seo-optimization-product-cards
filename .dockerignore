@@ -1,0 +1,10 @@
+.venv
+.idea
+__pycache__/
+.dvc/config.local
+.dvc/tmp
+.dvc/cache
+client_secrets.json
+/google_disk
+classification/product_cards.db
+#product_cards.db

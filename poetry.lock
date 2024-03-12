@@ -314,14 +314,14 @@ files = [
 
 [[package]]
 name = "cachetools"
-version = "5.3.2"
+version = "5.3.3"
 description = "Extensible memoizing collections and decorators"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "cachetools-5.3.2-py3-none-any.whl", hash = "sha256:861f35a13a451f94e301ce2bec7cac63e881232ccce7ed67fab9b5df4d3beaa1"},
-    {file = "cachetools-5.3.2.tar.gz", hash = "sha256:086ee420196f7b2ab9ca2db2520aca326318b68fe5ba8bc4d49cca91add450f2"},
+    {file = "cachetools-5.3.3-py3-none-any.whl", hash = "sha256:0abad1021d3f8325b2fc1d2e9c8b9c9d57b04c3932657a72465447332c24d945"},
+    {file = "cachetools-5.3.3.tar.gz", hash = "sha256:ba29e2dfa0b8b556606f097407ed1aa62080ee108ab0dc5ec9d6a723a007d105"},
 ]
 
 [[package]]
@@ -799,18 +799,6 @@ docs = ["ipython", "matplotlib", "numpydoc", "sphinx"]
 tests = ["pytest", "pytest-cov", "pytest-xdist"]
 
 [[package]]
-name = "dependencies"
-version = "7.7.0"
-description = "Constructor injection designed with OOP in mind."
-category = "dev"
-optional = false
-python-versions = "*"
-files = [
-    {file = "dependencies-7.7.0-py2.py3-none-any.whl", hash = "sha256:6a842068931258efc88b1faa7f08829b7e58271f4a097e2d06e766917909ad4f"},
-    {file = "dependencies-7.7.0.tar.gz", hash = "sha256:ae662ffe5726582705d26ae86977d0d616922100c38a211f0c27c765554fb026"},
-]
-
-[[package]]
 name = "dictdiffer"
 version = "0.9.0"
 description = "Dictdiffer is a library that helps you to diff and patch dictionaries."
@@ -966,14 +954,14 @@ pgp = ["gpg"]
 
 [[package]]
 name = "dvc"
-version = "3.48.2"
+version = "3.48.4"
 description = "Git for data scientists - manage your code and data together"
 category = "dev"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "dvc-3.48.2-py3-none-any.whl", hash = "sha256:e3137fedfd18d07cfcb65574d5e798b0d2f616bbb6e5eff6f3785ec0c737625c"},
-    {file = "dvc-3.48.2.tar.gz", hash = "sha256:7c0fe758fc19d0c52a0e015b74a6119655f2bd9305ec866b6cafb726eeab2c38"},
+    {file = "dvc-3.48.4-py3-none-any.whl", hash = "sha256:06e0852bb7173ee93fe1bb712244e6b8ae230af12957d16f12d9143a70b60f89"},
+    {file = "dvc-3.48.4.tar.gz", hash = "sha256:ce9823b5cf95e2094d77ff8037d0c0dfd9b04014dd79f17a9995badcdf8b062c"},
 ]
 
 [package.dependencies]
@@ -1021,7 +1009,7 @@ dev = ["dvc[azure,gdrive,gs,hdfs,lint,oss,s3,ssh,tests,webdav,webhdfs]"]
 gdrive = ["dvc-gdrive (>=3,<4)"]
 gs = ["dvc-gs (>=3,<4)"]
 hdfs = ["dvc-hdfs (>=3,<4)"]
-lint = ["mypy (==1.8.0)", "pandas-stubs", "types-colorama", "types-psutil", "types-pyinstaller", "types-requests", "types-tabulate", "types-toml", "types-tqdm", "typing-extensions"]
+lint = ["mypy (==1.9.0)", "pandas-stubs", "types-colorama", "types-psutil", "types-pyinstaller", "types-requests", "types-tabulate", "types-toml", "types-tqdm", "typing-extensions"]
 oss = ["dvc-oss (>=3,<4)"]
 s3 = ["dvc-s3 (>=3,<4)"]
 ssh = ["dvc-ssh (>=4,<5)"]
@@ -1034,14 +1022,14 @@ webhdfs-kerberos = ["dvc-webhdfs[kerberos] (>=3.1,<4)"]
 
 [[package]]
 name = "dvc-data"
-version = "3.14.0"
+version = "3.14.1"
 description = "DVC's data management subsystem"
 category = "dev"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "dvc-data-3.14.0.tar.gz", hash = "sha256:041730802be944929389b6149282a719da8b021d52678a26103551d483debf57"},
-    {file = "dvc_data-3.14.0-py3-none-any.whl", hash = "sha256:0a3c445ffab45a1e40b84dbb66ad788d6ed7429afd37bf481189b199957a6167"},
+    {file = "dvc-data-3.14.1.tar.gz", hash = "sha256:00b46fc826a05b6094d7d76158f8b15c48e7a491a36353a020790cd12a33f6e3"},
+    {file = "dvc_data-3.14.1-py3-none-any.whl", hash = "sha256:78288bf02743ed85eeafdc2bb0f52ca226116050c8494fd1772da5babac86501"},
 ]
 
 [package.dependencies]
@@ -1058,7 +1046,7 @@ tqdm = ">=4.63.1,<5"
 [package.extras]
 all = ["dvc-data[cli]"]
 cli = ["rich (>=10.11.0,<14.0.0)", "typer[all] (>=0.6)"]
-dev = ["blake3 (>=0.3.1)", "dvc-data[all]", "dvc-data[tests]", "mypy (==1.7.1)", "types-tqdm"]
+dev = ["blake3 (>=0.3.1)", "dvc-data[all]", "dvc-data[tests]", "mypy (==1.8.0)", "types-tqdm"]
 tests = ["pytest (>=7,<8)", "pytest-benchmark (>=4)", "pytest-cov (>=4.1.0)", "pytest-mock", "pytest-servers[s3] (==0.5.0)", "pytest-sugar"]
 
 [[package]]
@@ -1521,7 +1509,7 @@ test = ["black", "coverage[toml]", "ddt (>=1.1.1,!=1.4.3)", "mock", "mypy", "pre
 name = "google-api-core"
 version = "2.17.1"
 description = "Google API client core library"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1542,14 +1530,14 @@ grpcio-gcp = ["grpcio-gcp (>=0.2.2,<1.0.dev0)"]
 
 [[package]]
 name = "google-api-python-client"
-version = "2.118.0"
+version = "2.122.0"
 description = "Google API Client Library for Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google-api-python-client-2.118.0.tar.gz", hash = "sha256:ebf4927a3f5184096647be8f705d090e7f06d48ad82b0fa431a2fe80c2cbe182"},
-    {file = "google_api_python_client-2.118.0-py2.py3-none-any.whl", hash = "sha256:9d83b178496b180e058fd206ebfb70ea1afab49f235dd326f557513f56f496d5"},
+    {file = "google-api-python-client-2.122.0.tar.gz", hash = "sha256:77447bf2d6b6ea9e686fd66fc2f12ee7a63e3889b7427676429ebf09fcb5dcf9"},
+    {file = "google_api_python_client-2.122.0-py2.py3-none-any.whl", hash = "sha256:a5953e60394b77b98bcc7ff7c4971ed784b3b693e9a569c176eaccb1549330f2"},
 ]
 
 [package.dependencies]
@@ -1561,14 +1549,14 @@ uritemplate = ">=3.0.1,<5"
 
 [[package]]
 name = "google-auth"
-version = "2.28.1"
+version = "2.28.2"
 description = "Google Authentication Library"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google-auth-2.28.1.tar.gz", hash = "sha256:34fc3046c257cedcf1622fc4b31fc2be7923d9b4d44973d481125ecc50d83885"},
-    {file = "google_auth-2.28.1-py2.py3-none-any.whl", hash = "sha256:25141e2d7a14bfcba945f5e9827f98092716e99482562f15306e5b026e21aa72"},
+    {file = "google-auth-2.28.2.tar.gz", hash = "sha256:80b8b4969aa9ed5938c7828308f20f035bc79f9d8fb8120bf9dc8db20b41ba30"},
+    {file = "google_auth-2.28.2-py2.py3-none-any.whl", hash = "sha256:9fd67bbcd40f16d9d42f950228e9cf02a2ded4ae49198b27432d0cded5a74c38"},
 ]
 
 [package.dependencies]
@@ -1587,7 +1575,7 @@ requests = ["requests (>=2.20.0,<3.0.0.dev0)"]
 name = "google-auth-httplib2"
 version = "0.2.0"
 description = "Google Authentication Library: httplib2 transport"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 files = [
@@ -1601,14 +1589,14 @@ httplib2 = ">=0.19.0"
 
 [[package]]
 name = "googleapis-common-protos"
-version = "1.62.0"
+version = "1.63.0"
 description = "Common protobufs used in Google APIs"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "googleapis-common-protos-1.62.0.tar.gz", hash = "sha256:83f0ece9f94e5672cced82f592d2a5edf527a96ed1794f0bab36d5735c996277"},
-    {file = "googleapis_common_protos-1.62.0-py2.py3-none-any.whl", hash = "sha256:4750113612205514f9f6aa4cb00d523a94f3e8c06c5ad2fee466387dc4875f07"},
+    {file = "googleapis-common-protos-1.63.0.tar.gz", hash = "sha256:17ad01b11d5f1d0171c06d3ba5c04c54474e883b66b949722b4938ee2694ef4e"},
+    {file = "googleapis_common_protos-1.63.0-py2.py3-none-any.whl", hash = "sha256:ae45f75702f7c08b541f750854a678bd8f534a1a6bace6afe975f1d0a82d6632"},
 ]
 
 [package.dependencies]
@@ -1677,7 +1665,7 @@ files = [
 name = "httplib2"
 version = "0.22.0"
 description = "A comprehensive HTTP client library."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 files = [
@@ -1690,14 +1678,14 @@ pyparsing = {version = ">=2.4.2,<3.0.0 || >3.0.0,<3.0.1 || >3.0.1,<3.0.2 || >3.0
 
 [[package]]
 name = "huggingface-hub"
-version = "0.21.2"
+version = "0.21.4"
 description = "Client library to download and publish models, datasets and other repos on the huggingface.co hub"
 category = "main"
 optional = false
 python-versions = ">=3.8.0"
 files = [
-    {file = "huggingface_hub-0.21.2-py3-none-any.whl", hash = "sha256:16955c2b60bcff32a0778f84b9e9ae8f61d7f003da6aa1fbb7bc897a0c37b28c"},
-    {file = "huggingface_hub-0.21.2.tar.gz", hash = "sha256:839f2fc69fc51797b76dcffa7edbf7fb1150176f74cb1dc2d87ca00e5e0b5611"},
+    {file = "huggingface_hub-0.21.4-py3-none-any.whl", hash = "sha256:df37c2c37fc6c82163cdd8a67ede261687d80d1e262526d6c0ce73b6b3630a7b"},
+    {file = "huggingface_hub-0.21.4.tar.gz", hash = "sha256:e1f4968c93726565a80edf6dc309763c7b546d0cfe79aa221206034d50155531"},
 ]
 
 [package.dependencies]
@@ -2465,14 +2453,14 @@ files = [
 
 [[package]]
 name = "nvidia-nvjitlink-cu12"
-version = "12.3.101"
+version = "12.4.99"
 description = "Nvidia JIT LTO Library"
 category = "main"
 optional = false
 python-versions = ">=3"
 files = [
-    {file = "nvidia_nvjitlink_cu12-12.3.101-py3-none-manylinux1_x86_64.whl", hash = "sha256:64335a8088e2b9d196ae8665430bc6a2b7e6ef2eb877a9c735c804bd4ff6467c"},
-    {file = "nvidia_nvjitlink_cu12-12.3.101-py3-none-win_amd64.whl", hash = "sha256:1b2e317e437433753530792f13eece58f0aec21a2b05903be7bffe58a606cbd1"},
+    {file = "nvidia_nvjitlink_cu12-12.4.99-py3-none-manylinux2014_x86_64.whl", hash = "sha256:c6428836d20fe7e327191c175791d38570e10762edc588fb46749217cd444c74"},
+    {file = "nvidia_nvjitlink_cu12-12.4.99-py3-none-win_amd64.whl", hash = "sha256:991905ffa2144cb603d8ca7962d75c35334ae82bf92820b6ba78157277da1ad2"},
 ]
 
 [[package]]
@@ -2491,7 +2479,7 @@ files = [
 name = "oauth2client"
 version = "4.1.3"
 description = "OAuth 2.0 client library"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 files = [
@@ -2584,14 +2572,14 @@ files = [
 
 [[package]]
 name = "packaging"
-version = "23.2"
+version = "24.0"
 description = "Core utilities for Python packages"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "packaging-23.2-py3-none-any.whl", hash = "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"},
-    {file = "packaging-23.2.tar.gz", hash = "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"},
+    {file = "packaging-24.0-py3-none-any.whl", hash = "sha256:2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5"},
+    {file = "packaging-24.0.tar.gz", hash = "sha256:eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"},
 ]
 
 [[package]]
@@ -2820,7 +2808,7 @@ wcwidth = "*"
 name = "protobuf"
 version = "4.25.3"
 description = ""
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -2870,7 +2858,7 @@ test = ["enum34", "ipaddress", "mock", "pywin32", "wmi"]
 name = "pyasn1"
 version = "0.5.1"
 description = "Pure-Python implementation of ASN.1 types and DER/BER/CER codecs (X.208)"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 files = [
@@ -2882,7 +2870,7 @@ files = [
 name = "pyasn1-modules"
 version = "0.3.0"
 description = "A collection of ASN.1-based protocols modules"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 files = [
@@ -2907,14 +2895,14 @@ files = [
 
 [[package]]
 name = "pydantic"
-version = "2.6.3"
+version = "2.6.4"
 description = "Data validation using Python type hints"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pydantic-2.6.3-py3-none-any.whl", hash = "sha256:72c6034df47f46ccdf81869fddb81aade68056003900a8724a4f160700016a2a"},
-    {file = "pydantic-2.6.3.tar.gz", hash = "sha256:e07805c4c7f5c6826e33a1d4c9d47950d7eaf34868e2690f8594d2e30241f11f"},
+    {file = "pydantic-2.6.4-py3-none-any.whl", hash = "sha256:cc46fce86607580867bdc3361ad462bab9c222ef042d3da86f2fb333e1d916c5"},
+    {file = "pydantic-2.6.4.tar.gz", hash = "sha256:b1704e0847db01817624a6b86766967f552dd9dbf3afba4004409f908dcc84e6"},
 ]
 
 [package.dependencies]
@@ -3041,7 +3029,7 @@ tests = ["black", "chardet", "tox"]
 name = "pydrive"
 version = "1.3.1"
 description = "Google Drive API made easy."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 files = [
@@ -3149,14 +3137,14 @@ files = [
 
 [[package]]
 name = "pyopenssl"
-version = "24.0.0"
+version = "24.1.0"
 description = "Python wrapper module around the OpenSSL library"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pyOpenSSL-24.0.0-py3-none-any.whl", hash = "sha256:ba07553fb6fd6a7a2259adb9b84e12302a9a8a75c44046e8bb5d3e5ee887e3c3"},
-    {file = "pyOpenSSL-24.0.0.tar.gz", hash = "sha256:6aa33039a93fffa4563e655b61d11364d01264be8ccb49906101e02a334530bf"},
+    {file = "pyOpenSSL-24.1.0-py3-none-any.whl", hash = "sha256:17ed5be5936449c5418d1cd269a1a9e9081bc54c17aed272b45856a3d3dc86ad"},
+    {file = "pyOpenSSL-24.1.0.tar.gz", hash = "sha256:cabed4bfaa5df9f1a16c0ef64a0cb65318b5cd077a7eda7d6970131ca2f41a6f"},
 ]
 
 [package.dependencies]
@@ -3164,18 +3152,18 @@ cryptography = ">=41.0.5,<43"
 
 [package.extras]
 docs = ["sphinx (!=5.2.0,!=5.2.0.post0,!=7.2.5)", "sphinx-rtd-theme"]
-test = ["flaky", "pretend", "pytest (>=3.0.1)"]
+test = ["pretend", "pytest (>=3.0.1)", "pytest-rerunfailures"]
 
 [[package]]
 name = "pyparsing"
-version = "3.1.1"
+version = "3.1.2"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
 category = "main"
 optional = false
 python-versions = ">=3.6.8"
 files = [
-    {file = "pyparsing-3.1.1-py3-none-any.whl", hash = "sha256:32c7c0b711493c72ff18a981d24f28aaf9c1fb7ed5e9667c9e84e3db623bdbfb"},
-    {file = "pyparsing-3.1.1.tar.gz", hash = "sha256:ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"},
+    {file = "pyparsing-3.1.2-py3-none-any.whl", hash = "sha256:f9db75911801ed778fe61bb643079ff86601aca99fcae6345aa67292038fb742"},
+    {file = "pyparsing-3.1.2.tar.gz", hash = "sha256:a1bac0ce561155ecc3ed78ca94d3c9378656ad4c94c1270de543f621420f94ad"},
 ]
 
 [package.extras]
@@ -3183,14 +3171,14 @@ diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "python-dateutil"
-version = "2.8.2"
+version = "2.9.0.post0"
 description = "Extensions to the standard Python datetime module"
 category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 files = [
-    {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
-    {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
+    {file = "python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"},
+    {file = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"},
 ]
 
 [package.dependencies]
@@ -3273,6 +3261,7 @@ files = [
     {file = "PyYAML-6.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:bf07ee2fef7014951eeb99f56f39c9bb4af143d8aa3c21b1677805985307da34"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:855fb52b0dc35af121542a76b9a84f8d1cd886ea97c84703eaa6d88e37a2ad28"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:40df9b996c2b73138957fe23a16a4f0ba614f4c0efce1e9406a184b6d07fa3a9"},
+    {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a08c6f0fe150303c1c6b71ebcd7213c2858041a7e01975da3a99aed1e7a378ef"},
     {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0"},
     {file = "PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8d4e9c88387b0f5c7d5f281e55304de64cf7f9c0021a3525bd3b1c542da3b0e4"},
     {file = "PyYAML-6.0.1-cp312-cp312-win32.whl", hash = "sha256:d483d2cdf104e7c9fa60c544d92981f12ad66a457afae824d146093b8c294c54"},
@@ -3352,7 +3341,7 @@ jupyter = ["ipywidgets (>=7.5.1,<9)"]
 name = "rsa"
 version = "4.9"
 description = "Pure-Python RSA implementation"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6,<4"
 files = [
@@ -3742,26 +3731,26 @@ testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jar
 
 [[package]]
 name = "shortuuid"
-version = "1.0.12"
+version = "1.0.13"
 description = "A generator library for concise, unambiguous and URL-safe UUIDs."
 category = "dev"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.6"
 files = [
-    {file = "shortuuid-1.0.12-py3-none-any.whl", hash = "sha256:dd855d8c10ced5dc2790b97e31f16ad55a6f4871b478feb4351dd3128a8aa82b"},
-    {file = "shortuuid-1.0.12.tar.gz", hash = "sha256:c39f1b348b3c1e9b115a954b33b76c8c522d2d177a9d20acdbb20d24fac3ccfd"},
+    {file = "shortuuid-1.0.13-py3-none-any.whl", hash = "sha256:a482a497300b49b4953e15108a7913244e1bb0d41f9d332f5e9925dba33a3c5a"},
+    {file = "shortuuid-1.0.13.tar.gz", hash = "sha256:3bb9cf07f606260584b1df46399c0b87dd84773e7b25912b7e391e30797c5e72"},
 ]
 
 [[package]]
 name = "shtab"
-version = "1.7.0"
+version = "1.7.1"
 description = "Automagic shell tab completion for Python CLI applications"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "shtab-1.7.0-py3-none-any.whl", hash = "sha256:0824f6f965cf5b6466d8870289c15a8973518820231a84f4422a0b8377261375"},
-    {file = "shtab-1.7.0.tar.gz", hash = "sha256:6661c2835d0214e259ab74d09bdb9a863752e898bcf2e75ad8cf7ebd7c35bc7e"},
+    {file = "shtab-1.7.1-py3-none-any.whl", hash = "sha256:32d3d2ff9022d4c77a62492b6ec875527883891e33c6b479ba4d41a51e259983"},
+    {file = "shtab-1.7.1.tar.gz", hash = "sha256:4e4bcb02eeb82ec45920a5d0add92eac9c9b63b2804c9196c1f1fdc2d039243c"},
 ]
 
 [package.extras]
@@ -4067,14 +4056,14 @@ test = ["black (>=22.3.0,<23.0.0)", "coverage (>=6.2,<7.0)", "isort (>=5.0.6,<6.
 
 [[package]]
 name = "typing-extensions"
-version = "4.9.0"
+version = "4.10.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "typing_extensions-4.9.0-py3-none-any.whl", hash = "sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd"},
-    {file = "typing_extensions-4.9.0.tar.gz", hash = "sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"},
+    {file = "typing_extensions-4.10.0-py3-none-any.whl", hash = "sha256:69b1a937c3a517342112fb4c6df7e72fc39a38e7891a5730ed4985b5214b5475"},
+    {file = "typing_extensions-4.10.0.tar.gz", hash = "sha256:b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"},
 ]
 
 [[package]]
@@ -4093,7 +4082,7 @@ files = [
 name = "uritemplate"
 version = "4.1.1"
 description = "Implementation of RFC 6570 URI Templates"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -4321,4 +4310,4 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7863df3051326220bb1af5f8abf597f5197bcf1246bdd36622ad53c644b52ca8"
+content-hash = "2bd336e32db82fd63b32ddede364a18640b10b9dc54c374cb671a08bd7fb0b02"

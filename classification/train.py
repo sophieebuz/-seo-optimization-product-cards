@@ -18,7 +18,7 @@ def main() -> None:
     g.manual_seed(0)
 
 
-    os.system(f"dvc pull {Path.cwd() / 'data' / 'data'}")
+    #os.system(f"dvc pull {Path.cwd() / 'data' / 'data'}")
 
     BATCH_SIZE = 16
     NUM_EPOCHS = 10
