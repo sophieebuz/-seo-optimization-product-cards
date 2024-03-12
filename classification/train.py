@@ -32,7 +32,7 @@ def main() -> None:
         antialias=True,
     )
 
-    target_enc, target_mapping = get_target()
+    target_enc, _, idx2target = get_target()
     train_paths, test_paths, ytrain, ytest = get_traintestsplit(data_dir, target_enc, SEED)
 
     train_dataset = WbDataset(train_paths, ytrain, processor)
@@ -58,7 +58,7 @@ def main() -> None:
 
     pretrain_model = mobilenet_v2(weights=MobileNet_V2_Weights.IMAGENET1K_V2)
 
-    NUM_CLASSES = len(target_mapping)
+    NUM_CLASSES = len(idx2target)
 
     for param in pretrain_model.parameters():
         param.requires_grad = False
