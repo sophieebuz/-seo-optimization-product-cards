@@ -1,0 +1,5 @@
+outs:
+- md5: 65725cd5cbfc5a8fb9acc893d90db9be
+  size: 12288
+  hash: md5
+  path: product_cards.db
