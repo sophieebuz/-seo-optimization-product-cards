@@ -29,7 +29,7 @@ def fill_db(paths):
 
 def main():
     create_tables()
-    data_dir = Path("/".join(Path.cwd().parts[:-1])) / "data" / "data"
+    data_dir = Path.cwd() / "data" / "data"
     paths = get_all_files(data_dir)
     fill_db(paths)
 
