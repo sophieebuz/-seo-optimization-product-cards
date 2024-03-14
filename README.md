@@ -2,7 +2,10 @@
 ## Запуск локально:
   1. `poetry install --no-cache --without additional` установка зависимостей
   2. `poetry run pre-commit install`
-  3. `poetry run dvc pull` подтянуть данные
+  3. подтянуть данные:
+     - `poetry run dvc pull`
+     - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
+     - `poetry run dvc pull .\product_cards.db.dvc`
 
 Дальнейшие команды можно делать в любом поряке:
   - `poetry run python .\classification\train.py` запуск для обучения модели
@@ -12,9 +15,12 @@
 ## Запуск из докер контейнера:
   1. `poetry install --no-cache --only dev` установка зависимостей
   2. `poetry run pre-commit install`
-  3. `poetry run dvc pull` подтянуть данные
-  4. `docker build -t seo-optimization .` собрать образ
-  5. `docker run --rm -it --name seo-optimization -p 8898:8000 seo-optimization` запустить docker-image (затем перейти в браузер по следующему url `http://localhost:8898/`)
+  3. подтянуть данные:
+     - `poetry run dvc pull`
+     - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
+     - `poetry run dvc pull .\product_cards.db.dvc`
+  5. `docker build -t seo-optimization .` собрать образ
+  6. `docker run --rm -it --name seo-optimization -p 8898:8000 seo-optimization` запустить docker-image (затем перейти в браузер по следующему url `http://localhost:8898/`)
 
 _Примечание:_ проект может дорабатываться/изменяться в течении выполнения дз
 ____
