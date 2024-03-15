@@ -19,7 +19,7 @@ def archive_db_data():
 
 
 def archive_unpack():
-    with zipfile.ZipFile("db_data.zip", 'r') as zip_file:
+    with zipfile.ZipFile(Path.cwd() / "data" / "db_data.zip", 'r') as zip_file:
         zip_file.extractall(Path.cwd() / "data")
 
 
