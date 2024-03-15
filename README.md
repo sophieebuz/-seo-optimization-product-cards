@@ -23,7 +23,7 @@
   6. `docker run --rm -it --name seo-optimization -p 8898:8000 seo-optimization` запустить docker-image (затем перейти в браузер по следующему url `http://localhost:8898/`)
 
 _Примечание1:_ проект может дорабатываться/изменяться в течении выполнения дз  
-_Примечание2:_ на данный момент исп-ся упрощенная классификация (бинарная) с классами "bluzki-i-rubashki" и "antistress" (для примера можно подать [следующую картинку](https://diamondelectric.ru/images/2243/2242766/igryshkaantistress_expetro_1.jpg))
+_Примечание2:_ на данный момент исп-ся упрощенная классификация (бинарная) с классами "bluzki-i-rubashki" и "antistress" (для примера на fastapi сервис можно подать [следующую картинку](https://diamondelectric.ru/images/2243/2242766/igryshkaantistress_expetro_1.jpg))
 
 ____
 Общие сведения о проекте
