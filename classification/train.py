@@ -32,6 +32,7 @@ def main() -> None:
         antialias=True,
     )
 
+
     target_enc, _, idx2target = get_target()
     train_paths, test_paths, ytrain, ytest = get_traintestsplit(data_dir, target_enc, SEED)
 

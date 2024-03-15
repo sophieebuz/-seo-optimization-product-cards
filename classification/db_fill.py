@@ -1,7 +1,7 @@
-import sqlite3
 from pathlib import Path
 
 from db_create_table import create_tables
+from utils.dataset import local_conn
 
 
 def get_all_files(data_dir: Path):
@@ -18,7 +18,7 @@ def get_all_files(data_dir: Path):
     return paths
 
 def fill_db(paths):
-    with sqlite3.connect('product_cards.db') as con:
+    with local_conn() as con:
         cursor = con.cursor()
         for i in range(len(paths)):
             cursor.execute("INSERT INTO images (category, type, name)\
@@ -29,7 +29,7 @@ def fill_db(paths):
 
 def main():
     create_tables()
-    data_dir = Path("/".join(Path.cwd().parts[:-1])) / "data" / "data"
+    data_dir = Path.cwd() / "data" / "data"
     paths = get_all_files(data_dir)
     fill_db(paths)
 

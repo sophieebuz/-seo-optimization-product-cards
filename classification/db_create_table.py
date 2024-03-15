@@ -1,12 +1,14 @@
-import sqlite3
+import psycopg2
+from utils.dataset import local_conn
 
 
 def create_tables():
     try:
-        with sqlite3.connect('product_cards.db') as con:
+        with local_conn() as con:
             cursor = con.cursor()
+            cursor.execute("CREATE SEQUENCE your_seq;")
             query = """CREATE TABLE \"images\" (
-                       \"id\" INTEGER PRIMARY KEY,
+                       \"id\" INTEGER PRIMARY KEY default nextval('your_seq'),
                        \"category\" TEXT,
                        \"type\" TEXT,
                        \"name\" TEXT,

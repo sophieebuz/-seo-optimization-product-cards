@@ -1,13 +1,23 @@
 import pickle
-import sqlite3
 import typing
 from pathlib import Path
 
+import psycopg2
 import torch
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from torch.utils.data import Dataset
 from torchvision.io import read_image
+
+
+def local_conn() -> psycopg2.extensions.connection:
+    return psycopg2.connect(
+        host="seo-postgres-v2",
+        port=5432,
+        dbname="postgres",
+        user="postgres",
+        password="password",
+    )
 
 
 class WbDataset(Dataset):
@@ -57,7 +67,7 @@ def get_target(db="product_cards.db",
                le: typing.Optional[LabelEncoder] = None,
                label_encoder_pickle_file: Path = Path.cwd() / "data" / "labelencoder.pkl"
                ):
-    with sqlite3.connect(db) as con:
+    with local_conn() as con:
         cursor = con.cursor()
         cursor.execute(f"SELECT category FROM {table}")
         query = cursor.fetchall()
@@ -84,7 +94,7 @@ def get_target(db="product_cards.db",
 
 
 def get_traintestsplit(data_dir, target_enc, SEED, db="product_cards.db", table="images"):
-    with sqlite3.connect("product_cards.db") as con:
+    with local_conn() as con:
         cursor = con.cursor()
         cursor.execute(f"SELECT * FROM images")
         query = cursor.fetchall()
