@@ -1,3 +1,4 @@
 /data
 /checkpoint_model
 /labelencoder.pkl
+/db_data
