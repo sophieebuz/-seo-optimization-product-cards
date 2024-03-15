@@ -1,4 +1,4 @@
-## Checkpoint 1
+## Checkpoint 2
 ## Запуск локально:
   1. `poetry install --no-cache --without additional` установка зависимостей
   2. `poetry run pre-commit install`
@@ -12,13 +12,10 @@
   - `poetry run python .\classification\inference.py` запуск для инференса
   - `poetry run uvicorn --port 8898 api.main:app` для запуска сервиса (затем перейти в браузер по следующему url `http://localhost:8898/`)
 
-## Запуск из докер контейнера:
+## Запуск через docker-compose:
   1. `poetry install --no-cache --only dev` установка зависимостей
   2. `poetry run pre-commit install`
-  3. подтянуть данные:
-     - `poetry run dvc pull`
-     - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
-     - `poetry run dvc pull .\product_cards.db.dvc`
+  3. `poetry run dvc pull` подтянуть данные:
   5. `docker build -t seo-optimization .` собрать образ
   6. `docker run --rm -it --name seo-optimization -p 8898:8000 seo-optimization` запустить docker-image (затем перейти в браузер по следующему url `http://localhost:8898/`)
 
