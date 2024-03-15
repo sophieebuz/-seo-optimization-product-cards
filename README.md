@@ -1,26 +1,20 @@
 ## Checkpoint 2
-## Запуск локально:
-  1. `poetry install --no-cache --without additional` установка зависимостей
-  2. `poetry run pre-commit install`
-  3. подтянуть данные:
-     - `poetry run dvc pull`
-     - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
-     - `poetry run dvc pull .\product_cards.db.dvc`
-
-Дальнейшие команды можно делать в любом поряке:
-  - `poetry run python .\classification\train.py` запуск для обучения модели
-  - `poetry run python .\classification\inference.py` запуск для инференса
-  - `poetry run uvicorn --port 8898 api.main:app` для запуска сервиса (затем перейти в браузер по следующему url `http://localhost:8898/`)
-
 ## Запуск через docker-compose:
   1. `poetry install --no-cache --only dev` установка зависимостей
   2. `poetry run pre-commit install`
   3. `poetry run dvc pull` подтянуть данные:
   4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные
   5. `docker-compose up`
-  6. `docker run --rm -it --name seo-optimization -p 8898:8000 seo-optimization` запустить docker-image (затем перейти в браузер по следующему url `http://localhost:8898/`)
 
-_Примечание:_ проект может дорабатываться/изменяться в течении выполнения дз
+Дальнейшие команды можно делать в любом поряке:
+  - перейти в браузер по следующему url `http://localhost:8898/`
+  - в новом терминале `docker-compose exec -it seo-optimization bash`:
+    - `poetry run python classification/train.py` запуск для обучения модели
+    - `poetry run python classification/inference.py` запуск для инференса
+  
+
+_Примечание1:_ проект может дорабатываться/изменяться в течении выполнения дз  
+_Примечание2:_ на данный момент исп-ся упрощенная классификация (бинарная) с классами "bluzki-i-rubashki" и "antistress" (для примера можно подать [следующую картинку](https://diamondelectric.ru/images/2243/2242766/igryshkaantistress_expetro_1.jpg))
 ____
 Общие сведения о проекте
 # SEO-оптимизация карточек товара на маркетплейсах
