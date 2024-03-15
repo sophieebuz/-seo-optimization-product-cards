@@ -16,7 +16,8 @@
   1. `poetry install --no-cache --only dev` установка зависимостей
   2. `poetry run pre-commit install`
   3. `poetry run dvc pull` подтянуть данные:
-  5. `docker build -t seo-optimization .` собрать образ
+  4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные
+  5. `docker-compose up`
   6. `docker run --rm -it --name seo-optimization -p 8898:8000 seo-optimization` запустить docker-image (затем перейти в браузер по следующему url `http://localhost:8898/`)
 
 _Примечание:_ проект может дорабатываться/изменяться в течении выполнения дз
