@@ -15,9 +15,19 @@ services:
       - type: bind
         source: ./data/db_data
         target: /var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U postgres
+      interval: 1s
+      timeout: 1s
+      retries: 5
 
   seo-optimization:
     container_name: seo-optimization
     build: .
     ports:
       - "8898:8000"
+    depends_on:
+      seo-postgres-v2:
+        condition: service_healthy
