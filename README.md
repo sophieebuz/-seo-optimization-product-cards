@@ -1,4 +1,4 @@
-## Checkpoint 2
+## Checkpoint 3
 ## Запуск через docker-compose:
   1. `poetry install --no-cache --only dev` установка зависимостей
   2. `poetry run pre-commit install`
