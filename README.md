@@ -2,7 +2,10 @@
 ## Запуск через docker-compose:
   1. `poetry install --no-cache --only dev` установка зависимостей
   2. `poetry run pre-commit install`
-  3. `poetry run dvc pull` подтянуть данные:
+  3. подтянуть данные:
+     - `poetry run dvc pull`
+     - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
+     - `poetry run dvc pull .\data\db_data.zip.dvc`
   4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные
   5. `docker-compose up`
 
