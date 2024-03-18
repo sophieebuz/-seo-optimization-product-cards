@@ -18,6 +18,15 @@ def local_conn() -> psycopg2.extensions.connection:
         user="postgres",
         password="password",
     )
+# def local_conn() -> psycopg2.extensions.connection:
+#     return psycopg2.connect(
+#         host="localhost",
+#         port=53320,
+#         dbname="postgres",
+#         user="postgres",
+#         password="password",
+#     )
+
 
 
 class WbDataset(Dataset):

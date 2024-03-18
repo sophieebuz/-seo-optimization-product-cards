@@ -1,35 +1,25 @@
-import os
 from pathlib import Path
 
-from fastapi import FastAPI, File, Request, UploadFile
+import uvicorn as uvicorn
+from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
-from PIL import Image
 
-from inference.prediction import user_predict
-
-app = FastAPI()
-templates = Jinja2Templates(directory=f"{Path.cwd() / 'api' / 'templates'}")
+from api.celery_config.celery_utils import create_celery
+from api.routes import seo_classification
 
 
-@app.get("/")
-async def root(request: Request):
-    return templates.TemplateResponse('main_page.html',
-                                      {"request": request})
+def create_app() -> FastAPI:
+    current_app = FastAPI(title="Чего нибудь потом напишу",
+                          description="И тут тоже")
+
+    current_app.celery_app = create_celery()
+    current_app.include_router(seo_classification.router)
+    return current_app
 
 
-@app.post("/prediction")
-async def create_pred(request: Request,
-                      uploaded_file: UploadFile = File(...)):
-    img_name = uploaded_file.filename
-    with Image.open(uploaded_file.file) as img:
-        if img.mode == "RGBA":
-            img = img.convert("RGB")
+app = create_app()
+celery = app.celery_app
 
-        path_to_save = Path.cwd() / "data" / "users_images"
-        img_name = path_to_save / img_name
-        img.save(fp=img_name, format='PNG')
 
-        pred = user_predict([img_name])
-        os.remove(img_name)
-
-    return {"prediction is": pred}
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", port=9000, reload=True)

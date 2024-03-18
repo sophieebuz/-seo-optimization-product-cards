@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Training model</title>
+    </head>
+    <body>
+        <h1> Запустите переобучение модели </h1>
+        <form action="/seo-classification/training" method="post">
+            <button type="submit">Запустить</button>
+        </form>
+
+        {% if id["mark"] %}
+            <div><br>
+                Вашей посылки выдан id {{ id["id"] }}<br>
+                Убедитель, что вы запомнили Ваш id, прежде чем обновлять страницу.<br>
+                Позже вашей посылке будет присвоен task_id, по которому можно будет получить результат.<br><br>
+                Чтобы получить результат, обновите страницу. Ваш результат появится в таблице ниже как только будет готов.<br>
+                Текущий статус вашей посылки смотрите в таблице справа.
+            </div>
+        {% endif %}
+
+        <div><br>
+            <h1> Результаты обучения моделей </h1>
+            <table>
+                <style>
+                     table, th, td {
+                        padding: 10px;
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                     }
+                </style>
+                <thead>
+                <tr>
+                    <th>task_id</th>
+                    <th>task_status</th>
+                    <th>task_result</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for task in tasks_info %}
+                    <tr>
+                        <td>{{ task["task_id"][0] }}</td>
+                        <td>{{ task["task_status"] }}</td>
+                        <td>{{ task["task_result"] }}</td>
+                    </tr>
+                {% endfor %}
+                 </tbody>
+            </table>
+        </div>
+
+        <div align="right" style="position:absolute;top:10px;right:100px">
+            <h1 style="text-align:center"> Задачи </h1>
+            <table>
+                <style>
+                     table, th, td {
+                        padding: 10px;
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                     }
+                </style>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>task_id</th>
+                    <th>task_status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for train in train_info %}
+                    <tr>
+                        <td>{{ train[0] }}</td>
+                        <td>{{ train[1] }}</td>
+                        <td>{{ train[2] }}</td>
+                    </tr>
+                {% endfor %}
+                 </tbody>
+            </table>
+        </div>
+
+    </body>
+  </html>

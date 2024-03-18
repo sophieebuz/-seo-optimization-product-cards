@@ -1,6 +1,6 @@
-FROM python:3.10
+FROM python:3.10-slim
 
-RUN apt-get update
+RUN apt-get update && apt-get -y install curl
 
 RUN mkdir home/seo-optimization-cards
 WORKDIR home/seo-optimization-cards

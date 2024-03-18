@@ -8,7 +8,8 @@ import torch
 from sklearn.metrics import (accuracy_score, f1_score, precision_score,
                              recall_score)
 from torch.utils.data import DataLoader
-from utils.plots import plot_losses
+
+#from utils.plots import plot_losses
 
 
 class Trainer:
@@ -141,17 +142,18 @@ class Trainer:
                 val_metrics[m_name].append(m_value)
 
             if plot:
-                plot_losses(train_losses, val_losses, train_metrics, val_metrics)
+                #plot_losses(train_losses, val_losses, train_metrics, val_metrics)
+                pass
 
             print(f"Epoch {epoch}")
-            print("val metrics")
-            print(f"loss {val_losses[-1]}")
-            for elem in val_metrics.items():
-                print(elem[0], elem[1][-1])
-            print("\ntrain metrics")
-            print(f"loss {train_losses[-1]}")
-            for elem in train_metrics.items():
-                print(elem[0], elem[1][-1])
+            # print("val metrics")
+            # print(f"loss {val_losses[-1]}")
+            # for elem in val_metrics.items():
+            #     print(elem[0], elem[1][-1])
+            # print("\ntrain metrics")
+            # print(f"loss {train_losses[-1]}")
+            # for elem in train_metrics.items():
+            #     print(elem[0], elem[1][-1])
 
         shutil.rmtree(path_for_save / "checkpoint_model", ignore_errors=True)
         self.accelerator.save_state(output_dir=path_for_save / "checkpoint_model")
