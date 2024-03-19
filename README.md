@@ -6,7 +6,7 @@
      - `poetry run dvc pull`
      - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
      - `poetry run dvc pull .\data\db_data.zip.dvc`
-  4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные
+  4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные (запускать надо под правами Администратора)
   5. `docker-compose up`
 
 Дальнейшие команды можно делать в любом поряке:
