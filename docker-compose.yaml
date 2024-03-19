@@ -22,6 +22,7 @@ services:
       interval: 1s
       timeout: 1s
       retries: 5
+      start_period: 5s
 
   seo-optimization-v2:
     container_name: seo-optimization
