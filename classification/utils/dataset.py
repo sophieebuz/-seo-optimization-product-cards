@@ -21,7 +21,7 @@ def local_conn() -> psycopg2.extensions.connection:
 # def local_conn() -> psycopg2.extensions.connection:
 #     return psycopg2.connect(
 #         host="localhost",
-#         port=53320,
+#         port=53322,
 #         dbname="postgres",
 #         user="postgres",
 #         password="password",

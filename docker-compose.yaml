@@ -4,7 +4,7 @@ services:
 
   seo-postgres-v2:
     container_name: seo-postgres-v2
-    image: postgres:latest
+    image: postgres:16.2
     environment:
       POSTGRES_DB: "postgres"
       POSTGRES_USER: "postgres"
