@@ -2,6 +2,8 @@
   <html>
     <head>
         <title>Training model</title>
+<!--        <link rel="stylesheet" href=" {{ url_for('static', path='training_model.css') }} ">-->
+        <link rel="stylesheet" href="/static/training_model.css">
     </head>
     <body>
         <h1> Запустите переобучение модели </h1>
@@ -21,14 +23,7 @@
 
         <div><br>
             <h1> Результаты обучения моделей </h1>
-            <table>
-                <style>
-                     table, th, td {
-                        padding: 10px;
-                        border: 1px solid black;
-                        border-collapse: collapse;
-                     }
-                </style>
+            <table class="table_style">
                 <thead>
                 <tr>
                     <th>task_id</th>
@@ -48,16 +43,13 @@
             </table>
         </div>
 
-        <div align="right" style="position:absolute;top:10px;right:100px">
-            <h1 style="text-align:center"> Задачи </h1>
-            <table>
-                <style>
-                     table, th, td {
-                        padding: 10px;
-                        border: 1px solid black;
-                        border-collapse: collapse;
-                     }
-                </style>
+<!--        <img src="/static/mountins.jpg">-->
+<!--        <img src="/static/mountins2.jpg">-->
+<!--        <img src="/static/mountins3.jpg">-->
+
+        <div align="right" class="left_div">
+            <h1 class="left_div_h1"> Задачи </h1>
+            <table class="table_style">
                 <thead>
                 <tr>
                     <th>id</th>

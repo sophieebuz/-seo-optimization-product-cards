@@ -31,5 +31,3 @@ def create_tables():
         print("Table celery_training_status and celery_seq CREATED!")
     except:
         print("Table celery_training_status are already exist")
-
-create_tables()

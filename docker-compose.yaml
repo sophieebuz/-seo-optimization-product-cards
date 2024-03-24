@@ -4,7 +4,7 @@ services:
 
   seo-postgres-v2:
     container_name: seo-postgres-v2
-    image: postgres:15
+    image: postgres:16.2
     environment:
       POSTGRES_DB: "postgres"
       POSTGRES_USER: "postgres"
@@ -25,7 +25,7 @@ services:
       start_period: 5s
 
   seo-optimization-v2:
-    container_name: seo-optimization
+    container_name: seo-optimization-v2
     build: .
     ports:
       - "8898:8000"
@@ -82,6 +82,29 @@ services:
     command: poetry run celery -A api.main.celery flower --port=5555
     ports:
       - 55555:5555
+    depends_on:
+      seo-optimization-v2:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      celery-worker:
+        condition: service_healthy
+
+  nginx:
+    container_name: nginx
+    image: nginx:1.24.0
+    ports:
+      - "60124:80"
+    volumes:
+      - type: bind
+        source: ./api/nginx_config/nginx
+        target: /etc/nginx
+      - type: bind
+        source: ./api/nginx_config/log
+        target: /log
+      - type: bind
+        source: ./api/static
+        target: /var/www/static
     depends_on:
       seo-optimization-v2:
         condition: service_healthy

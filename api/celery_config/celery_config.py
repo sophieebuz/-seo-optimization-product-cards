@@ -13,7 +13,7 @@ def route_task(name, args, kwargs, options, task=None, **kw):
 
 class BaseConfig:
     # CELERY_BROKER_URL: str = os.environ.get("CELERY_BROKER_URL", "amqp://guest:guest@localhost:5672//")
-    # CELERY_RESULT_BACKEND: str = os.environ.get("CELERY_RESULT_BACKEND", "db+postgresql://postgres:password@localhost:53320/postgres")
+    # CELERY_RESULT_BACKEND: str = os.environ.get("CELERY_RESULT_BACKEND", "db+postgresql://postgres:password@localhost:53322/postgres")
     CELERY_BROKER_URL: str = os.environ.get("CELERY_BROKER_URL", "amqp://guest:guest@rabbitmq:5672//")
     CELERY_RESULT_BACKEND: str = os.environ.get("CELERY_RESULT_BACKEND", "db+postgresql://postgres:password@seo-postgres-v2:5432/postgres")
 

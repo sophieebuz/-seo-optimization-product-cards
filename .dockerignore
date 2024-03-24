@@ -8,4 +8,6 @@ client_secrets.json
 /google_disk
 classification/product_cards.db
 data/db_data
+api/nginx_config
+api/static/*
 #product_cards.db

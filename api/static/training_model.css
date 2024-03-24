@@ -1,0 +1,17 @@
+.table_style {
+    table, th, td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+                  }
+}
+
+.left_div {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+}
+
+.left_div_h1 {
+    text-align: center;
+}
