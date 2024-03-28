@@ -21,8 +21,8 @@ services:
         - pg_isready -U postgres
       interval: 1s
       timeout: 1s
-      retries: 5
-      start_period: 5s
+      retries: 10
+      start_period: 10s
 
   seo-optimization-v2:
     container_name: seo-optimization-v2
