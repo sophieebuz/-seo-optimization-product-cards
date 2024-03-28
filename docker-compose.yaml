@@ -4,7 +4,7 @@ services:
 
   seo-postgres-v2:
     container_name: seo-postgres-v2
-    image: postgres:15
+    image: postgres:16.2
     environment:
       POSTGRES_DB: "postgres"
       POSTGRES_USER: "postgres"
@@ -21,8 +21,8 @@ services:
         - pg_isready -U postgres
       interval: 1s
       timeout: 1s
-      retries: 5
-      start_period: 5s
+      retries: 10
+      start_period: 10s
 
   seo-optimization-v2:
     container_name: seo-optimization
