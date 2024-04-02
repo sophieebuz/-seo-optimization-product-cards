@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: seo
+  name: seo-optimization-v2
+  labels:
+    app: seo-optimization-v2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: seo-optimization-v2
+  template:
+    metadata:
+      labels:
+        app: seo-optimization-v2
+    spec:
+      containers:
+      - name: seo-optimization-v2
+        image: sofibuz/seo-optimization:static
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000

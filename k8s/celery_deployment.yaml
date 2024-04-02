@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: seo
+  name: celery-worker
+  labels:
+    app: celery-worker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: celery-worker
+  template:
+    metadata:
+      labels:
+        app: celery-worker
+    spec:
+      containers:
+      - name: celery-worker
+        image: sofibuz/seo-optimization:static
+        command: ["poetry", "run", "celery", "-A", "api.main.celery", "worker", "-l", "info", "-Q", "seo-classification", "--concurrency=1", "-P", "eventlet"]
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "4"
+        ports:
+        - containerPort: 8000

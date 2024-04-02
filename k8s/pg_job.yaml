@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: seo
+  name: pg-job
+spec:
+  ttlSecondsAfterFinished: 60
+  backoffLimit: 1
+  template:
+    spec:
+      containers:
+      - name: pg-job
+        image: sofibuz/pgjob
+        command: ["poetry", "run", "python", "k8s/pgjob/db_fill.py"]
+      restartPolicy: OnFailure

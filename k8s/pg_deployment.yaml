@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: seo
+  name: seo-postgres-v2
+  labels:
+    app: seo-postgres-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: seo-postgres-v2
+  template:
+    metadata:
+      labels:
+        app: seo-postgres-v2
+    spec:
+      containers:
+      - name: seo-postgres-v2
+        image: postgres:16.2
+        env:
+          - name: POSTGRES_DB
+            value: "postgres"
+          - name: POSTGRES_USER
+            value: "postgres"
+          - name: POSTGRES_PASSWORD
+            value: "password"
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5432
+      #   volumeMounts:
+      #     - name: db-data
+      #       mountPath: /var/lib/postgresql/data
+      # volumes:
+      #   - name: db-data
+      #     hostPath:
+      #       path: /seo_data/db_data
+      #       type: Directory
