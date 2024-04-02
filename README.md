@@ -1,18 +1,12 @@
-## Checkpoint 4
-## Запуск через docker-compose:
-  1. `poetry install --no-cache --only dev` установка зависимостей
-  2. `poetry run pre-commit install`
-  3. подтянуть данные:
-     - `poetry run dvc pull`
-     - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
-     - `poetry run dvc pull .\data\db_data.zip.dvc`
-  4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные (запускать надо под правами Администратора)
-  5. `docker-compose up`
+## Checkpoint 5
+## Запуск через kubernetes (minikube):
+  1. `minikube start` запустить куребнетес-кластер (запускала с параметрами --driver=docker --memory=4096 --cpus=8) 
+  2.  `.\k8s\k8s_apply.ps1` создать абстакции (запуск ps-скрипта - если windows, запустить вручную команды, прописанные в данном файле - если другая os)
 
 Дальнейшие команды можно делать в любом поряке:
   - перейти в браузер по следующему url:
-    -  `http://localhost:60124/seo-classification/training` для запуска обучения модели (можно понажимать несколько раз, пообновлять страницу, дождать конца обучения и тому подобного рода разные взаимодействия со страницей)
-    -  `http://localhost:60124/seo-classification/` для инференса 
+    -  `http://localhost:8898/seo-classification/training` для запуска обучения модели (можно понажимать несколько раз, пообновлять страницу, дождать конца обучения и тому подобного рода разные взаимодействия со страницей)
+    -  `http://localhost:8898/seo-classification/` для инференса 
 
 _Примечание1:_ проект может дорабатываться/изменяться в течении выполнения дз  
 _Примечание2:_ на данный момент исп-ся упрощенная классификация (бинарная) с классами "bluzki-i-rubashki" и "antistress" (для примера на fastapi сервис можно подать [следующую картинку](https://diamondelectric.ru/images/2243/2242766/igryshkaantistress_expetro_1.jpg))
