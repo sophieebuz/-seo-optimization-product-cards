@@ -1,3 +1,5 @@
+kubectl apply -f .\k8s\namespace.yaml
+
 kubectl apply -f .\k8s\pg_deployment.yaml
 kubectl apply -f .\k8s\pg_service.yaml
 kubectl apply -f .\k8s\pg_job.yaml  
