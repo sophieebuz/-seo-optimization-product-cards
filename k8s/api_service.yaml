@@ -3,8 +3,6 @@ kind: Service
 metadata:
   namespace: seo
   name: seo-optimization-v2
-  # labels:
-  #   app: seo
 spec:
   selector:
     app: seo-optimization-v2

@@ -3,8 +3,6 @@ kind: Service
 metadata:
   namespace: seo
   name: rabbitmq
-  # labels:
-  #   app: seo
 spec:
   selector:
     app: rabbitmq

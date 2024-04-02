@@ -3,8 +3,6 @@ kind: Service
 metadata:
   namespace: seo
   name: celery-worker
-  # labels:
-  #   app: seo
 spec:
   selector:
     app: celery-worker

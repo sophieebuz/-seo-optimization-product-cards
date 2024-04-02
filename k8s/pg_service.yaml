@@ -3,8 +3,6 @@ kind: Service
 metadata:
   namespace: seo
   name: seo-postgres-v2
-  # labels:
-  #   app: seo
 spec:
   selector:
     app: seo-postgres-v2
