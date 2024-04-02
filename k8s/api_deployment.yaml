@@ -24,3 +24,18 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /docs
+            port: 8000
+          initialDelaySeconds: 0
+          periodSeconds: 30
+          timeoutSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: /docs
+            port: 8000
+          initialDelaySeconds: 0
+          periodSeconds: 30
+          timeoutSeconds: 2
+          successThreshold: 5

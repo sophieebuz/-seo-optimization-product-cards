@@ -31,6 +31,15 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5432
+        livenessProbe:
+          exec:
+            command:
+              - bash
+              - "-c"
+              - "pg_isready -U postgres"
+          initialDelaySeconds: 0      # аналог start_period
+          periodSeconds: 10           # аналог interval
+          timeoutSeconds: 5           # аналог timeout
       #   volumeMounts:
       #     - name: db-data
       #       mountPath: /var/lib/postgresql/data
