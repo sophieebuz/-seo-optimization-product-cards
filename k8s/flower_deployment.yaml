@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: seo
+  name: flower
+  labels:
+    app: flower
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flower
+  template:
+    metadata:
+      labels:
+        app: flower
+    spec:
+      containers:
+      - name: flower
+        image: sofibuz/seo-optimization
+        command: ["poetry", "run", "celery", "-A", "api.main.celery", "flower", "--port=5555"]
+        env:
+          - name: FLOWER_PORT
+            value: "5555"
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "2"
+        ports:
+        - containerPort: 5555

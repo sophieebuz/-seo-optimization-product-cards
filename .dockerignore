@@ -9,8 +9,8 @@ client_secrets.json
 classification/product_cards.db
 data/db_data
 api/nginx_config
-#/k8s
-#api/static/*
-api/static/*.jpg
+/k8s
+api/static/*
+#api/static/*.jpg
 k8s/k8s_dump/
 #product_cards.db

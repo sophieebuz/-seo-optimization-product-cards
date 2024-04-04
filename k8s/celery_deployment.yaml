@@ -6,7 +6,7 @@ metadata:
   labels:
     app: celery-worker
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: celery-worker
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: celery-worker
-        image: sofibuz/seo-optimization:static
+        image: sofibuz/seo-optimization
         command: ["poetry", "run", "celery", "-A", "api.main.celery", "worker", "-l", "info", "-Q", "seo-classification", "--concurrency=1", "-P", "eventlet"]
         resources:
           limits:

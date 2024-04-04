@@ -5,7 +5,7 @@ metadata:
   name: pg-job
 spec:
   ttlSecondsAfterFinished: 60
-  backoffLimit: 1
+  backoffLimit: 5
   template:
     spec:
       containers:

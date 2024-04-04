@@ -6,7 +6,7 @@ metadata:
   labels:
     app: seo-optimization-v2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: seo-optimization-v2
@@ -17,25 +17,25 @@ spec:
     spec:
       containers:
       - name: seo-optimization-v2
-        image: sofibuz/seo-optimization:static
+        image: sofibuz/seo-optimization
         resources:
           limits:
             memory: "512Mi"
             cpu: "500m"
         ports:
         - containerPort: 8000
-        livenessProbe:
-          httpGet:
-            path: /docs
-            port: 8000
-          initialDelaySeconds: 0
-          periodSeconds: 30
-          timeoutSeconds: 2
-        readinessProbe:
-          httpGet:
-            path: /docs
-            port: 8000
-          initialDelaySeconds: 0
-          periodSeconds: 30
-          timeoutSeconds: 2
-          successThreshold: 5
+        # livenessProbe:
+        #   httpGet:
+        #     path: /docs
+        #     port: 8000
+        #   initialDelaySeconds: 0
+        #   periodSeconds: 30
+        #   timeoutSeconds: 2
+        # readinessProbe:
+        #   httpGet:
+        #     path: /docs
+        #     port: 8000
+        #   initialDelaySeconds: 0
+        #   periodSeconds: 30
+        #   timeoutSeconds: 2
+        #   successThreshold: 5

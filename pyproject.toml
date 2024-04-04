@@ -24,6 +24,11 @@ celery = "^5.3.6"
 flower = "^2.0.1"
 eventlet = "^0.35.2"
 sqlalchemy = "^2.0.28"
+#torchvision = [{url = "https://download.pytorch.org/whl/cpu/torchvision-0.17.2%2Bcpu-cp310-cp310-win_amd64.whl", markers = "sys_platform == 'win32'"},
+#               {url = "https://download.pytorch.org/whl/cpu/torchvision-0.17.2%2Bcpu-cp310-cp310-linux_x86_64.whl", markers = "sys_platform == 'linux'"}]
+#torch = [{url = "https://download.pytorch.org/whl/cpu/torch-2.2.2%2Bcpu-cp310-cp310-win_amd64.whl", markers = "sys_platform == 'win32'"},
+#         {url = "https://download.pytorch.org/whl/cpu/torch-2.2.2%2Bcpu-cp310-cp310-linux_x86_64.whl", markers = "sys_platform == 'linux'"}]
+
 
 
 [tool.poetry.group.dev.dependencies]

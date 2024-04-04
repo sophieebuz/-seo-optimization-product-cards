@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: seo
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.24.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-configmap-css
+          mountPath: var/www/static/
+          readOnly: true
+        - name: nginx-configmap-seoconf
+          mountPath: /etc/nginx/conf.d/
+          readOnly: true
+        - name: nginx-configmap-conf
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+          readOnly: true
+        
+      volumes:
+        - name: nginx-configmap-css
+          configMap:
+            name: nginx-configmap
+            items:
+              - key: training_model.css
+                path: training_model.css
+        - name: nginx-configmap-seoconf
+          configMap:
+            name: nginx-configmap
+            items:
+              - key: seo.conf
+                path: seo.conf
+        - name: nginx-configmap-conf
+          configMap:
+            name: nginx-configmap
+            items:
+              - key: nginx.conf
+                path: nginx.conf
