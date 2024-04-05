@@ -24,18 +24,34 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8000
-        # livenessProbe:
-        #   httpGet:
-        #     path: /docs
-        #     port: 8000
-        #   initialDelaySeconds: 0
-        #   periodSeconds: 30
-        #   timeoutSeconds: 2
-        # readinessProbe:
-        #   httpGet:
-        #     path: /docs
-        #     port: 8000
-        #   initialDelaySeconds: 0
-        #   periodSeconds: 30
-        #   timeoutSeconds: 2
-        #   successThreshold: 5
+        env:
+          - name: POSTGRES_DB
+            valueFrom:
+              secretKeyRef:
+                name: secret-data
+                key: postgres_db
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+                name: secret-data
+                key: postgres_user
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secret-data
+                key: postgres_password
+        
+        livenessProbe:
+          httpGet:
+            path: /docs
+            port: 8000
+          initialDelaySeconds: 0
+          periodSeconds: 30
+          timeoutSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: /docs
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 30
+          timeoutSeconds: 2

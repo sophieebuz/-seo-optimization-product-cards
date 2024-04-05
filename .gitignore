@@ -7,3 +7,4 @@ classification/product_cards.db
 product_cards.db
 api/static/*.jpg
 k8s/k8s_dump/
+.env

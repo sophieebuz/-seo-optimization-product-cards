@@ -1,7 +1,10 @@
 import os
 from functools import lru_cache
 
+from dotenv import load_dotenv
 from kombu import Queue
+
+load_dotenv()
 
 
 def route_task(name, args, kwargs, options, task=None, **kw):
@@ -15,7 +18,7 @@ class BaseConfig:
     # CELERY_BROKER_URL: str = os.environ.get("CELERY_BROKER_URL", "amqp://guest:guest@localhost:5672//")
     # CELERY_RESULT_BACKEND: str = os.environ.get("CELERY_RESULT_BACKEND", "db+postgresql://postgres:password@localhost:53322/postgres")
     CELERY_BROKER_URL: str = os.environ.get("CELERY_BROKER_URL", "amqp://guest:guest@rabbitmq:5672//")
-    CELERY_RESULT_BACKEND: str = os.environ.get("CELERY_RESULT_BACKEND", "db+postgresql://postgres:password@seo-postgres-v2:5432/postgres")
+    CELERY_RESULT_BACKEND: str = os.environ.get("CELERY_RESULT_BACKEND", f"db+postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@seo-postgres-v2:5432/{os.getenv('POSTGRES_DB')}")
 
 
     CELERY_TASK_QUEUES: list = (

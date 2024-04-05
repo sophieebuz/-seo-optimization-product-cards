@@ -1,22 +1,25 @@
+import os
 import pickle
 import typing
 from pathlib import Path
 
 import psycopg2
 import torch
+from dotenv import load_dotenv
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from torch.utils.data import Dataset
 from torchvision.io import read_image
 
+load_dotenv()
 
 def local_conn() -> psycopg2.extensions.connection:
     return psycopg2.connect(
         host="seo-postgres-v2",
         port=5432,
-        dbname="postgres",
-        user="postgres",
-        password="password",
+        dbname=os.getenv('POSTGRES_DB'),
+        user=os.getenv('POSTGRES_USER'),
+        password=os.getenv('POSTGRES_PASSWORD'),
     )
 # def local_conn() -> psycopg2.extensions.connection:
 #     return psycopg2.connect(

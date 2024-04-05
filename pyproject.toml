@@ -30,7 +30,6 @@ sqlalchemy = "^2.0.28"
 #         {url = "https://download.pytorch.org/whl/cpu/torch-2.2.2%2Bcpu-cp310-cp310-linux_x86_64.whl", markers = "sys_platform == 'linux'"}]
 
 
-
 [tool.poetry.group.dev.dependencies]
 dvc = {extras = ["gdrive"], version = "^3.48.2"}
 pre-commit = "^3.6.2"
@@ -43,6 +42,7 @@ pydrive = "^1.3.1"
 
 [tool.poetry.group.pgjob.dependencies]
 psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]

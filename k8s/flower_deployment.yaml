@@ -22,9 +22,24 @@ spec:
         env:
           - name: FLOWER_PORT
             value: "5555"
+          - name: POSTGRES_DB
+            valueFrom:
+              secretKeyRef:
+                name: secret-data
+                key: postgres_db
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+                name: secret-data
+                key: postgres_user
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secret-data
+                key: postgres_password
         resources:
           limits:
-            memory: "1Gi"
-            cpu: "2"
+            memory: "512Mi"
+            cpu: "500m"
         ports:
         - containerPort: 5555
