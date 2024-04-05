@@ -1,4 +1,5 @@
 kubectl apply -f .\k8s\namespace.yaml
+kubectl apply -f .\k8s\secrets.yaml
 
 kubectl apply -f .\k8s\pg_deployment.yaml
 kubectl apply -f .\k8s\pg_service.yaml
@@ -19,8 +20,6 @@ kubectl apply -f .\k8s\nginx_configmap.yaml
 kubectl apply -f .\k8s\nginx_deployment.yaml
 kubectl apply -f .\k8s\nginx_services.yaml
 kubectl apply -f .\k8s\ingress.yaml
-
-kubectl apply -f .\k8s\secrets.yaml   
 
 sleep 10
 kubectl apply -f .\k8s\pg_job.yaml  
