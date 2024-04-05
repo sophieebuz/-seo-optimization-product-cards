@@ -35,7 +35,6 @@ spec:
           httpGet:
             path: /docs
             port: 8000
-          initialDelaySeconds: 0
+          initialDelaySeconds: 5
           periodSeconds: 30
           timeoutSeconds: 2
-          successThreshold: 5
