@@ -1,8 +1,9 @@
-## Checkpoint 5
+## Checkpoint 6
 ## Запуск через kubernetes (minikube):
-  1. `minikube start` запустить куребнетес-кластер (запускала с параметрами --driver=docker --memory=4096 --cpus=8) 
-  2.  `.\k8s\k8s_apply.ps1` создать абстакции, дождаться пока status не станет running (запуск ps-скрипта - если windows, запустить вручную команды, прописанные в данном файле - если другая os)
-  3. `kubectl port-forward service/seo-optimization-v2 -n seo 8898:8000` дать доступ к сервису извне
+  1. `minikube start` запустить куребнетес-кластер (запускала с параметрами --driver=docker --memory=4096 --cpus=8)
+  2. `minikube addons enable ingress` установить ingress-nginx провайдер
+  3.  `.\k8s\k8s_apply.ps1` создать абстакции, дождаться пока status не станет running (запуск ps-скрипта - если windows, запустить вручную команды, прописанные в данном файле - если другая os)
+  4. `kubectl port-forward service/seo-optimization-v2 -n seo 8898:8000` дать доступ к сервису извне
 
 Дальнейшие команды можно делать в любом поряке:
   - перейти в браузер по следующему url:
