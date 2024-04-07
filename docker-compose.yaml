@@ -141,6 +141,16 @@ services:
         source: ./data/grafana
         target: /var/lib/grafana
 
+  node-exporter:
+    container_name: node-exporter
+    image: prom/node-exporter:v1.7.0
+    ports:
+      - 9100:9100
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+
   postgresql-exporter:
     container_name: postgresql-exporter
     image: prometheuscommunity/postgres-exporter:v0.15.0
