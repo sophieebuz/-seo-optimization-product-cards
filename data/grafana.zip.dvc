@@ -1,0 +1,5 @@
+outs:
+- md5: 65459ba780b5eb1ff3af1869f2cbd8fa
+  size: 120101
+  hash: md5
+  path: grafana.zip

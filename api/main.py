@@ -4,6 +4,7 @@ import uvicorn as uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from api.celery_config.celery_utils import create_celery
 from api.routes import seo_classification
@@ -16,6 +17,7 @@ def create_app() -> FastAPI:
     current_app.mount("/static", StaticFiles(directory="./api/static"), name="static")
     current_app.celery_app = create_celery()
     current_app.include_router(seo_classification.router)
+    Instrumentator().instrument(current_app).expose(current_app)
     return current_app
 
 

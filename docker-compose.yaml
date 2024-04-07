@@ -90,25 +90,66 @@ services:
       celery-worker:
         condition: service_healthy
 
-  nginx:
-    container_name: nginx
-    image: nginx:1.24.0
+#  nginx:
+#    container_name: nginx
+#    image: nginx:1.24.0
+#    ports:
+#      - "60124:80"
+#    volumes:
+#      - type: bind
+#        source: ./api/nginx_config/nginx
+#        target: /etc/nginx
+#      - type: bind
+#        source: ./api/nginx_config/log
+#        target: /log
+#      - type: bind
+#        source: ./api/static
+#        target: /var/www/static
+#    depends_on:
+#      seo-optimization-v2:
+#        condition: service_healthy
+#      rabbitmq:
+#        condition: service_healthy
+#      celery-worker:
+#        condition: service_healthy
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:v2.51.1
     ports:
-      - "60124:80"
+      - 9090:9090
     volumes:
       - type: bind
-        source: ./api/nginx_config/nginx
-        target: /etc/nginx
+        source: ./monitoring/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget http://localhost:9090
+      interval: 1s
+      timeout: 1s
+      retries: 10
+      start_period: 10s
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:10.1.9
+    ports:
+      - 3000:3000
+    volumes:
       - type: bind
-        source: ./api/nginx_config/log
-        target: /log
-      - type: bind
-        source: ./api/static
-        target: /var/www/static
+        source: ./data/grafana
+        target: /var/lib/grafana
+
+  postgresql-exporter:
+    container_name: postgresql-exporter
+    image: prometheuscommunity/postgres-exporter:v0.15.0
+    ports:
+      - 9187:9187
+    environment:
+      DATA_SOURCE_NAME: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@seo-postgres-v2:5432/${POSTGRES_DB}?sslmode=disable"
     depends_on:
-      seo-optimization-v2:
+      seo-postgres-v2:
         condition: service_healthy
-      rabbitmq:
-        condition: service_healthy
-      celery-worker:
+      prometheus:
         condition: service_healthy
