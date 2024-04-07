@@ -1,15 +1,19 @@
-## Checkpoint 6
-## Запуск через kubernetes (minikube):
-  1. `minikube start` запустить куребнетес-кластер (запускала с параметрами --driver=docker --memory=4096 --cpus=8)
-  2. `minikube addons enable ingress` установить ingress-nginx провайдер
-  3.  `.\k8s\k8s_apply.ps1` создать абстакции, дождаться пока status не станет running (запуск ps-скрипта - если windows, запустить вручную команды, прописанные в данном файле - если другая os)
-  4. `kubectl port-forward pods/<ingress-nginx-controller-yourhash> -n ingress-nginx 62123:80` дать доступ к ingress извне
-  5. `kubectl port-forward service/flower -n seo 55555:5555` дать доступ к сервису flower извне
+## Checkpoint 7
+## Запуск через docker-compose:
+  1. `poetry install --no-cache --only dev` установка зависимостей
+  2. `poetry run pre-commit install`
+  3. подтянуть данные:
+     - `poetry run dvc pull`
+     - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
+     - `poetry run dvc pull .\data\db_data.zip.dvc`
+     - `poetry run dvc pull .\data\grafana.zip.dvc`
+  4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные (запускать надо под правами Администратора)
+  5. `docker-compose up`
 
 Дальнейшие команды можно делать в любом поряке:
   - перейти в браузер по следующему url:
-    -  `http://localhost:62123/seo-classification/training` для запуска обучения модели (можно понажимать несколько раз, пообновлять страницу, дождать конца обучения и тому подобного рода разные взаимодействия со страницей)
-    -  `http://localhost:62123/seo-classification/` для инференса
+    -  `http://localhost:60124/seo-classification/training` для запуска обучения модели (можно понажимать несколько раз, пообновлять страницу, дождать конца обучения и тому подобного рода разные взаимодействия со страницей)
+    -  `http://localhost:60124/seo-classification/` для инференса 
     -  `http://localhost:55555` для сервиса flower
 
 _Примечание:_ сервисы могут подняться и начать отвечать не сразу, иногда необходимо какое то время подождать
