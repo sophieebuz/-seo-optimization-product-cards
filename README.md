@@ -7,7 +7,9 @@
      - `poetry run dvc pull .\data\labelencoder.pkl.dvc`
      - `poetry run dvc pull .\data\db_data.zip.dvc`
      - `poetry run dvc pull .\data\grafana.zip.dvc`
-  4. `poetry run .\data\archive_db_data.py -u` разархивировать необходимые данные (запускать надо под правами Администратора)
+  4. разархивировать необходимые данные (запускать надо под правами Администратора):
+     - `poetry run .\data\archive_db_data.py -u`
+     - `poetry run .\data\archive_grafana.py -u`
   5. `docker-compose up`
 
 Дальнейшие команды можно делать в любом поряке:
@@ -15,8 +17,8 @@
     -  `http://localhost:60124/seo-classification/training` для запуска обучения модели (можно понажимать несколько раз, пообновлять страницу, дождать конца обучения и тому подобного рода разные взаимодействия со страницей)
     -  `http://localhost:60124/seo-classification/` для инференса 
     -  `http://localhost:55555` для сервиса flower
-
-_Примечание:_ сервисы могут подняться и начать отвечать не сразу, иногда необходимо какое то время подождать
+    -  `http://localhost:3000` для grafana
+    -  `http://localhost:9090` для prometheus
 
 _Примечание1:_ проект может дорабатываться/изменяться в течении выполнения дз  
 _Примечание2:_ на данный момент исп-ся упрощенная классификация (бинарная) с классами "bluzki-i-rubashki" и "antistress" (для примера на fastapi сервис можно подать [следующую картинку](https://diamondelectric.ru/images/2243/2242766/igryshkaantistress_expetro_1.jpg))
